@@ -1,0 +1,59 @@
+1) IO map
+
+Inputs (digital)
+
+I0.0 — Start / Run (system enable)
+
+I0.1 — NS vehicle detector (optional)
+
+I0.2 — EW vehicle detector (optional)
+
+I0.3 — Pedestrian NS request (push button)
+
+I0.4 — Pedestrian EW request (push button)
+
+I0.5 — Manual override / Fault reset (optional)
+
+Outputs (digital)
+
+Q0.0 — NS Green
+
+Q0.1 — NS Yellow
+
+Q0.2 — NS Red
+
+Q0.3 — EW Green
+
+Q0.4 — EW Yellow
+
+Q0.5 — EW Red
+
+Q0.6 — Pedestrian NS Walk
+
+Q0.7 — Pedestrian EW Walk
+
+Internal memory / timers
+
+T_NS_Green — Timer for NS green
+
+T_NS_Yellow — Timer for NS yellow
+
+T_All_Red — Timer for all-red
+
+T_EW_Green, T_EW_Yellow
+
+Bit: STATE_0..STATE_3 or an integer STATE (0..3)
+
+State encoding (recommended)
+
+STATE = 0 → NS Green
+
+STATE = 1 → NS Yellow
+
+STATE = 2 → All Red (transition)
+
+STATE = 3 → EW Green
+
+STATE = 4 → EW Yellow
+
+STATE = 5 → All Red (transition back)
